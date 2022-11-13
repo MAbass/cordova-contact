@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <div data-role="page" id="homepage">
+      <div data-role="header" data-inset="true">
+        <h2>Liste des contacts</h2>
+      </div>
+      <div role="main" class="ui-content">
+        <div>
+          <button onclick="location.href='#addContact'">
+            Creer un contact
+          </button>
+        </div>
+        <div
+          data-role="collapsibleset"
+          data-theme="a"
+          data-inset="true"
+          id="list-contacts"
+        ></div>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <h2>Design by MAD</h2>
+      </div>
+    </div>
+    <div data-role="page" id="addContact">
+      <div data-role="header" data-inset="true">
+        <h1>Formulaire d'ajout</h1>
+      </div>
+      <div>
+        <input type="text" id="firstname" placeholder="Nom" />
+        <input type="text" id="lastname" placeholder="Prénom" />
+        <input type="text" id="address" placeholder="Adresse" />
+        <input type="text" id="phoneNumber" placeholder="Numéro de téléphone" />
+        <button onclick="addContact()">Ajouter</button>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <h2>Design by MAD</h2>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
