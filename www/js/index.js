@@ -64,6 +64,9 @@ function findAllContact() {
       $(containerContact).on("swipeleft", function () {
         $(this).hide("slow", function () {
           singleContact.remove(onSuccess);
+          function onSuccess(){
+            alert('Contact supprimé')
+          }
         });
       });
 
