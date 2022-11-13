@@ -19,6 +19,7 @@ function findAllContact() {
     const listContacts = document.getElementById("list-contacts");
     listContacts.innerHTML = "";
     contacts.forEach((singleContact) => {
+      // alert(JSON.stringify(singleContact));
       const listContacts = document.getElementById("list-contacts");
 
       const containerContact = document.createElement("div");
@@ -36,17 +37,27 @@ function findAllContact() {
       const nameSubContact = document.createElement("li");
       const nameSubContactText = document.createElement("h5");
       nameSubContactText.innerText =
-        "Nom du contact:" + singleContact.displayName;
+        "Nom du contact: " + singleContact.displayName;
       nameSubContact.appendChild(nameSubContactText);
 
       const phoneSubContact = document.createElement("li");
       const phoneSubContactText = document.createElement("h5");
       phoneSubContactText.innerText =
-        "Numéro de téléphone:" + singleContact.phoneNumbers[0].value;
+        "Numéro de téléphone: " + singleContact.phoneNumbers[0].value;
       phoneSubContact.appendChild(phoneSubContactText);
+
+      const addressSubContact = document.createElement("li");
+      const addressSubContactText = document.createElement("h5");
+      const adresse =
+        singleContact.addresses != null
+          ? singleContact.addresses[0].streetAddress
+          : "Non renseignée";
+      addressSubContactText.innerText = "Adresse: " + adresse;
+      addressSubContact.appendChild(addressSubContactText);
 
       listSubContact.appendChild(nameSubContact);
       listSubContact.appendChild(phoneSubContact);
+      listSubContact.appendChild(addressSubContact);
 
       containerContact.appendChild(listSubContact);
 
